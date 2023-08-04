@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mark.css">
+    <title>Mark calculator</title>
+</head>
+<body>
+    <div class="school">
+        <div class="head">
+            <h1>Mark calculator</h1>
+        </div>
+        <div class="input">
+            <input type="text" id="mar" placeholder="Enter a mark">
+        </div>
+        <div>
+            <button type="submit" onclick="marklist()">convert to grade</button>
+        </div>
+        <div class="result">
+        </div>
+    </div>
+    <script>
+     function marklist(){
+        const mark= document.getElementById("mar").value
+         let grade= 'N'
+    
+        if(mark>=91){
+      grade= 'O'
+    }
+    else if(mark>=81 && mark<=90){
+     grade= 'A+'
+    }
+         else if(mark>=71 && mark<=80){
+     grade= 'A'
+    }
+         else if(mark>=61 && mark<=70){
+     grade= 'B+'
+    }
+        else if(mark>=51 && mark<=60){
+     grade= 'B'
+    }
+     else{
+     grade= 'U'
+    }
+     let result = document.querySelector('.result')
+     result.innerHTML="Your Grade is "+ grade
+}
+    </script>
+</body>
+</html>

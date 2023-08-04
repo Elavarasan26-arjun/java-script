@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EB.css">
+    <title>EB bill </title>
+</head>
+<body>
+<div class="billing">
+    <div class="head">
+    <h1>EB Bill Amount</h1>
+</div>
+<div class="input">
+    <input type="type" id="input" placeholder="Enter a unit">
+</div>
+<div>
+    <button type="submit" onclick="amount()">check the amount</button>
+</div>
+<div class="result"></div>
+</div>
+<script>
+function amount(){
+    let Rs=Number(document.getElementById("input").value)
+    let unit=''
+    rs=0
+
+   if(unit<=50 && unit>1){
+        Rs=unit*0.75
+    }
+    else if(unit<=100 && unit>50){
+        Rs=50*0.75+(unit-50)*1.00
+    } 
+    else if(unit<=250 && unit>150){
+        Rs=50*0.75+100*1.00+(unit-150)*1.30
+    }
+    else if(unit>250){
+       Rs=50*0.75+100*1.00+100*1.30+(unit-250)*1.50
+    }
+    else{
+        Rs="---"
+    }
+    let result = document.querySelector('.result')
+     result.innerHTML="Your bill is "+ Rs +" rupees"
+}
+</script>
+
+    
+</body>
+</html>
